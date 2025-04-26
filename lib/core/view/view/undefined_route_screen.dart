@@ -36,7 +36,7 @@ class _UndefinedRouteScreenState extends State<UndefinedRouteScreen> {
               duration: transitionDuration,
               curve: Curves.fastOutSlowIn,
               style: const TextStyle(color: AppColors.white),
-              child: Image.asset(AppImages.imgLogo, width: context.width * 0.4,fit: BoxFit.contain,),
+              child: Image.asset(AppImages.imgWhiteLogo, width: context.width * 0.4,fit: BoxFit.contain,),
             ),
             8.heightBox,
             AnimatedCrossFade(

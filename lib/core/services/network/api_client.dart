@@ -1,11 +1,6 @@
+import 'package:bookapp/core/resources/app_constant.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-
-const String _baseURL = "https://gutendex.com/";
-
-const String _contentType = "Content-Type";
-const String _accept = "accept";
-const String _applicationJson = "application/json";
 
 class ApiClient {
   final Dio _dio;
@@ -13,14 +8,14 @@ class ApiClient {
 
   ApiClient(this._dio, this._prettyDioLogger) {
     final BaseOptions baseOptions = BaseOptions(
-      baseUrl: _baseURL,
+      baseUrl: AppConstant.baseURL,
       receiveDataWhenStatusError: true,
       connectTimeout: const Duration(minutes: 3),
       receiveTimeout: const Duration(minutes: 3),
       sendTimeout: const Duration(minutes: 3),
       headers: {
-        _contentType: _applicationJson,
-        _accept: _applicationJson,
+        AppConstant.contentType: AppConstant.applicationJson,
+        AppConstant.accept: AppConstant.applicationJson,
       },
     );
 
@@ -28,11 +23,6 @@ class ApiClient {
     if (kDebugMode) _dio.interceptors.add(_prettyDioLogger);
   }
 
-  Future<Response> get({required String url, Map<String, dynamic>? queryParameters}) async {
-    return await _dio.get(
-      url,
-      queryParameters: queryParameters,
-    );
-  }
-
+  Future<Response> get({required String url, Map<String, dynamic>? queryParameters}) async => await _dio.get(url, queryParameters: queryParameters);
+  
 }

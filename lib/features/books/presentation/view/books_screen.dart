@@ -57,7 +57,6 @@ class _BooksScreenState extends State<BooksScreen> {
                     children: [
                       Text('Hello,',style: Theme.of(context).textTheme.headlineMedium?.bold.copyWith(color: AppColors.primary),),
                       Text('what do you want to read today?',style: Theme.of(context).textTheme.bodyMedium?.medium.copyWith(color: AppColors.darkGrey),),
-      
                     ],
                   ),
                   SizedBox(width: 36.w,child: Image.asset(AppImages.imgLogo,fit: BoxFit.fill,))
@@ -112,7 +111,6 @@ class _BooksScreenState extends State<BooksScreen> {
                   },
                 ),
               ),
-      
             ],
           ),
         ),

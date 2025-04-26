@@ -1,4 +1,7 @@
+import 'package:bookapp/features/books/data/model/authors_model.dart';
 import 'package:bookapp/features/books/data/model/book_model.dart';
+import 'package:bookapp/features/books/data/model/books_model.dart';
+import 'package:bookapp/features/books/data/model/format_model.dart';
 import 'package:bookapp/features/books/domain/entity/author_entity.dart';
 import 'package:bookapp/features/books/domain/entity/book_entity.dart';
 import 'package:bookapp/features/books/domain/entity/books_entity.dart';

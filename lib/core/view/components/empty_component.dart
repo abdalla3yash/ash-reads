@@ -19,7 +19,7 @@ class EmptyComponent extends StatelessWidget {
         children: [
           Image.asset(image != null ? image.toString() :AppImages.imgLogo,width: 64,),
           8.heightBox,
-          Text(title ?? "No Data Found!!",textAlign: TextAlign.center,style: const TextStyle(fontSize: 18,fontWeight: FontWeight.bold),).paddingSymmetric(horizontal: 8.w),
+          Text(title ?? "No Data Found!!",textAlign: TextAlign.center,style: const TextStyle(fontSize: 16,fontWeight: FontWeight.w500),).paddingSymmetric(horizontal: 8.w),
           8.heightBox,
           Text(description ?? "",textAlign: TextAlign.center,style: const TextStyle(fontSize: 16,color: AppColors.lightGrey,fontWeight: FontWeight.normal),).paddingSymmetric(horizontal: 8.w),
    

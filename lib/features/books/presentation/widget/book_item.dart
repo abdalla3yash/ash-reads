@@ -27,10 +27,8 @@ class BookItem extends StatelessWidget {
                       placeholder: AppImages.imgPlaceHolder,
                       image: book.formats.imageJpeg.toString(),
                       fit: BoxFit.contain,
-                      imageErrorBuilder: (context, error, stackTrace) => Image.asset(
-                        AppImages.imgLogo,
-                        fit: BoxFit.contain,
-                      ),
+                      placeholderFit: BoxFit.cover,
+                      imageErrorBuilder: (context, error, stackTrace) => Image.asset(AppImages.imgLogo, fit: BoxFit.contain),
                     ),
                   ),
                 ),
@@ -52,7 +50,6 @@ class BookItem extends StatelessWidget {
           Text(book.title,maxLines: 1,overflow: TextOverflow.ellipsis,style: Theme.of(context).textTheme.bodyLarge?.bold),
           Text(book.authors.isNotEmpty == true ? book.authors.first.name : "UnKnown Author",maxLines: 1,overflow: TextOverflow.ellipsis,style: Theme.of(context).textTheme.bodyMedium),
           Text(book.subjects.join(),maxLines: 1,overflow: TextOverflow.ellipsis,style: Theme.of(context).textTheme.bodySmall),
-        
         ],
       ),
     );
