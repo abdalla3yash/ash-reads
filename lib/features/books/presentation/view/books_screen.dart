@@ -73,7 +73,7 @@ class _BooksScreenState extends State<BooksScreen> {
                 textInputAction: TextInputAction.search,
               ).paddingSymmetric(horizontal: 8.w),
               12.heightBox,
-              
+
               Expanded(
                 child: BlocBuilder<BookCubit, BookState>(
                   builder: (context, state) {
@@ -104,7 +104,7 @@ class _BooksScreenState extends State<BooksScreen> {
                         physics: const BouncingScrollPhysics(),
                         itemBuilder: (context, index) {
                           if (index >= books.length) return const Padding(padding: EdgeInsets.symmetric(vertical: 24), child: LoadingSpinner());
-                          return BookItem(entity: books[index]);
+                          return BookItem(book: books[index]);
                         },
                       );
                     }

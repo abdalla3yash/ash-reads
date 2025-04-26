@@ -11,7 +11,7 @@ abstract class AppTheme{
       color: Colors.white,
       elevation: 0.0,
       surfaceTintColor: AppColors.white,
-      foregroundColor: AppColors.black,
+      foregroundColor: AppColors.white,
       centerTitle: true,
       shadowColor: Colors.white,
       systemOverlayStyle: SystemUiOverlayStyle(statusBarBrightness: Brightness.light, statusBarIconBrightness: Brightness.dark),

@@ -7,13 +7,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BookItem extends StatelessWidget {
-  final BookEntity entity;
-  const BookItem({super.key,required this.entity});
+  final BookEntity book;
+  const BookItem({super.key,required this.book});
 
   @override
   Widget build(BuildContext context) {
     return TapEffect(
-      onClick: ()=> NavigationService.push(Routes.webviewScreen,arguments: {"title":entity.title,"url":entity.formats.textHtml}),
+      onClick: ()=> NavigationService.push(Routes.bookDetailsScreen,arguments: {"book":book}),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -25,8 +25,8 @@ class BookItem extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12.r),
                     child: FadeInImage.assetNetwork(
                       placeholder: AppImages.imgPlaceHolder,
-                      image: entity.formats.imageJpeg.toString(),
-                      fit: BoxFit.cover,
+                      image: book.formats.imageJpeg.toString(),
+                      fit: BoxFit.contain,
                       imageErrorBuilder: (context, error, stackTrace) => Image.asset(
                         AppImages.imgLogo,
                         fit: BoxFit.contain,
@@ -39,7 +39,7 @@ class BookItem extends StatelessWidget {
                   decoration: BoxDecoration(borderRadius: BorderRadius.circular(12.r),color: AppColors.primary),
                   child: Row(
                     children: [
-                      Text(entity.downloadCount.toString(),style: TextStyle(color: AppColors.white,fontWeight: FontWeight.w700,fontSize: 16.sp),),
+                      Text(book.downloadCount.toString(),style: TextStyle(color: AppColors.white,fontWeight: FontWeight.w700,fontSize: 16.sp),),
                       2.widthBox,
                       Icon(Icons.download,color: AppColors.white,),
                     ],
@@ -49,9 +49,9 @@ class BookItem extends StatelessWidget {
             ),
           ),
           4.heightBox,
-          Text(entity.title,maxLines: 1,overflow: TextOverflow.ellipsis,style: Theme.of(context).textTheme.bodyLarge?.bold),
-          Text(entity.authors.isNotEmpty == true ? entity.authors.first.name : "UnKnown Author",maxLines: 1,overflow: TextOverflow.ellipsis,style: Theme.of(context).textTheme.bodyMedium),
-          Text(entity.subjects.join(),maxLines: 1,overflow: TextOverflow.ellipsis,style: Theme.of(context).textTheme.bodySmall),
+          Text(book.title,maxLines: 1,overflow: TextOverflow.ellipsis,style: Theme.of(context).textTheme.bodyLarge?.bold),
+          Text(book.authors.isNotEmpty == true ? book.authors.first.name : "UnKnown Author",maxLines: 1,overflow: TextOverflow.ellipsis,style: Theme.of(context).textTheme.bodyMedium),
+          Text(book.subjects.join(),maxLines: 1,overflow: TextOverflow.ellipsis,style: Theme.of(context).textTheme.bodySmall),
         
         ],
       ),
